@@ -1,0 +1,4 @@
+import wencai as wc
+
+result = wc.search(query="所有A股", 30)
+print(result)

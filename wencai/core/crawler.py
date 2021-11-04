@@ -82,11 +82,11 @@ class Wencai(object):
         else:
             raise Exception(r.content.decode('utf-8'))
 
-    def search(self, query_string):
+    def search(self, query_string, page):
 
         payload = {
             "question": query_string,
-            "page": 1,
+            "page": page,
             "perpage": 50,
             "log_info": '{"input_type": "typewrite"}',
             "source": "Ths_iwencai_Xuangu",
@@ -96,11 +96,12 @@ class Wencai(object):
             "block_list": "",
             "add_info": '{"urp": {"scene": 1, "company": 1, "business": 1}, "contentType": "json", "searchInfo": true}'
         }
-
+        print(payload)
         r = self.session.post_result(url=WENCAI_CRAWLER_URL['search'],
                                      data=payload, force_cookies=True)
+        print("r", r.json())
         result = r.json()['data']['answer'][0]['txt'][0]['content']['components'][0]['data']['datas']
-
+        print("result", result)
         def _re_str(x: str):
             _re = re.findall('(.*):前复权', x)
             if len(_re) >= 1:

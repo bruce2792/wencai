@@ -7,7 +7,9 @@ import datetime as dt
 class WencaiCookie:
 
     def __init__(self):
+        print('__file__'+__file__)
         self.json_path = os.path.dirname(__file__) + '/cookies.json'
+        print('self.json_path' + self.json_path)
 
     def getHeXinVByHttp(self):
         with open(os.path.dirname(os.path.dirname(__file__)) + '/js/hexin.js', 'r') as f:

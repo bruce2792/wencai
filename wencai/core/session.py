@@ -26,6 +26,8 @@ class Session(requests.Session):
                 proxies = random.choice(proxies)
         self.proxies = proxies
         self.verify = verify
+        print("proxies", proxies)
+        print("verify", verify)
 
     def update_headers(self, source, add_headers, force_cookies=False):
         if force_cookies:
@@ -48,7 +50,11 @@ class Session(requests.Session):
     def post_result(self, url, source=None, data=None, json=None, add_headers=None, force_cookies=False, **kwargs):
         self.update_headers(add_headers=add_headers, source=source, force_cookies=force_cookies)
         if self.proxies is None:
-            return super(Session, self).post(url=url, data=data, json=json, **kwargs)
+            ret = super(Session, self).post(url=url, data=data, json=json, **kwargs)
+            print("headers", self.headers)
+            print("data", data)
+            print("ret", ret)
+            return ret
         else:
             return super(Session, self).post(url=url, data=data, json=json, proxies=self.proxies, verify=self.verify,
                                              **kwargs)

@@ -44,6 +44,6 @@ def get_lastjs(code):
                   proxies=globals()['global_proxies'], verify=globals()['verify']).lastjs(code)
 
 
-def search(query, page):
+def search(query, page, pageSize):
     print(globals()['global_proxies'])
-    return Wencai(proxies=globals()['global_proxies'], verify=globals()['verify']).search(query_string=query,page=page)
+    return Wencai(proxies=globals()['global_proxies'], verify=globals()['verify']).search(query_string=query,page=page , pageSize=pageSize)

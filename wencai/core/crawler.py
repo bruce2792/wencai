@@ -82,12 +82,12 @@ class Wencai(object):
         else:
             raise Exception(r.content.decode('utf-8'))
 
-    def search(self, query_string, page):
+    def search(self, query_string, page, pageSize):
 
         payload = {
             "question": query_string,
             "page": page,
-            "perpage": 50,
+            "perpage": pageSize,
             "log_info": '{"input_type": "typewrite"}',
             "source": "Ths_iwencai_Xuangu",
             "version": 2.0,

@@ -4,7 +4,11 @@ import os
 import json
 
 ## 所有A股,A股，A股市值降序
-result = wc.search(query="A股市值降序", page=1, pageSize=10)
+# result = wc.search(query="A股市值降序", page=1, pageSize=10)
+# print(result)
+
+
+result = wc.search(query="主板股票最新价格", page=1, pageSize=5000)
 print(result)
 
 # print(dt.datetime.today().strftime('%Y-%m-%d %H:%M:%S'))

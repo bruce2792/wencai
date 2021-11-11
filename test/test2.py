@@ -11,8 +11,12 @@ import json
 # result = wc.search(query="A股现价以及昨日收盘价", page=1, pageSize=10)
 # print(result)
 
-result = wc.search(query="A股现价", page=1, pageSize=10)
+# result = wc.search(query="A股现价", page=1, pageSize=10)
+# print(result)
+
+result = wc.search(query="A股现价以及昨日收盘价", page=1, pageSize=5000)
 print(result)
+
 
 
 # print(dt.datetime.today().strftime('%Y-%m-%d %H:%M:%S'))

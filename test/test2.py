@@ -14,7 +14,7 @@ import json
 # result = wc.search(query="A股现价", page=1, pageSize=10)
 # print(result)
 
-result = wc.search(query="A股现价以及昨日收盘价", page=1, pageSize=5000)
+result = wc.search(query="A股现价以及昨日收盘价", page=3, pageSize=1000)
 print(result)
 
 
